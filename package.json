@@ -1,0 +1,29 @@
+{
+  "name": "fake-websockets",
+  "version": "0.0.1",
+  "description": "A simple fake websocket generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proteus-h2020/fake-websockets.git"
+  },
+  "keywords": [
+    "websockets",
+    "fake",
+    "data"
+  ],
+  "author": "Treelogic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/proteus-h2020/fake-websockets/issues"
+  },
+  "homepage": "https://github.com/proteus-h2020/fake-websockets#readme",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "nodejs-websocket": "^1.6.0",
+    "socket.io": "^1.4.6"
+  }
+}
