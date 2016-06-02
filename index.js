@@ -10,12 +10,14 @@ var server = ws.createServer((conn) => {
   });
 
   conn.on("close", (code, reason) => {
+    conn = null;
     console.log("Connection closed")
   });
 
   function scheduleDataStreaming(cb, time) {
     var iterator = new generator();
     setInterval(() => {
+      if(conn == null)return;
       var data = iterator.next();
       conn.sendText(data);
     }, time);

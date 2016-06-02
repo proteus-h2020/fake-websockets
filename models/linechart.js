@@ -1,7 +1,7 @@
 function linechartGenerator() {
   this.x = 0;
 
-  this.next = function () {
+  this.next =  () => {
     var series1 = [];
     var series2 = [];
     var series3 = [];
