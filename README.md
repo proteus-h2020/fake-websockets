@@ -6,10 +6,10 @@ This is a specific project used by [proteus-charts](https://github.com/proteus-h
 git clone https://github.com/proteus-h2020/fake-websockets
 node index.js
 ```
-After that, all the websocket endpoint are ready and listeing for incoming connections.
+After that, all the websocket endpoint are ready and listening for incoming connections.
 
 ##Connecting to endpoints
-Below the available endpoints that this program creates after running:
+Below the available endpoints that this program creates:
 ```javascript
 //Simple endpoints
 var linechart =  'ws://localhost:3000/linechart';
