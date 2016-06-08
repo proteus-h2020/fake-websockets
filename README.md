@@ -4,6 +4,7 @@ This is a specific project used by [proteus-charts](https://github.com/proteus-h
 ##Getting started
 ```bash
 git clone https://github.com/proteus-h2020/fake-websockets
+npm install
 node index.js
 ```
 After that, all the websocket endpoint are ready and listening for incoming connections.
