@@ -16,6 +16,7 @@ Below the available endpoints that this program creates:
 var linechart =  'ws://localhost:3000/linechart';
 var gauge =  'ws://localhost:3000/gauge';
 var barchart =  'ws://localhost:3000/barchart';
+var swimlane =  'ws://localhost:3000/swimlane';
 
 //Multiseries endpoint
 var multiseriesLinechart =  'ws://localhost:3000/multiseriesLinechart';
