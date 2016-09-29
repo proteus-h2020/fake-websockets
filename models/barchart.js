@@ -8,14 +8,10 @@ function barchartGenerator() {
   ];
 
   this.next = () => {
-    var data = [
-      {
-        key: 'Serie1',
-        values: []
-      }
-    ];
+    var data = [];
+    
     for (var category in this.categories) {
-      data[0].values.push({
+      data.push({
         x: this.categories[category],
         y: Math.random() * 100
       });
