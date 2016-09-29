@@ -15,6 +15,7 @@ function linechartGenerator() {
     }
     **/
     //var data = [{ key: "series1", values: series1 }];
+    key = (this.x % 2 == 0) ? 'serie1' : 'serie2';
     var data = [{ key: "series1", x: (++this.x), y: parseInt(Math.random() * (100 - 20) + 20) }];
 
     return JSON.stringify(data);
