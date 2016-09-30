@@ -9,7 +9,7 @@ function streamgraphGenerator() {
     this.next = () => {
 
         var data = [];
-        var dDate = this.date.add('days', 1).format('DD/MM/YY').toString();
+        var dDate = this.date.add('days', 1).format('MM/DD/YY').toString();
 
         for (var i in this.countries) {
             var country = this.countries[i];
