@@ -1,4 +1,4 @@
-
+var moment = require('moment');
 function streamgraphGenerator() {
     this.item = 0;
     this.countries = ['ES', 'UK', 'FR', 'AS', 'IT'];
