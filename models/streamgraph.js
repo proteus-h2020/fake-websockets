@@ -17,7 +17,7 @@ function streamgraphGenerator() {
             data.push({
                 key: country,
                 x: dDate,
-                y: Math.random() * 50
+                y: parseInt(Math.random() * 50)
             });
 
         }
