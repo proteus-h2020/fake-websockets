@@ -18,8 +18,8 @@ function swimlaneGenerator() {
     }
     var data = [];
 
-    for (let i = 0; i < this.lanes.length; i++) {
-      let lane = this.lanes[i];
+    for (var i = 0; i < this.lanes.length; i++) {
+      var lane = this.lanes[i];
       data.push({
         key: lane.label,
         x: this.date.add('days', 1).toString(),
@@ -27,23 +27,6 @@ function swimlaneGenerator() {
       })
     }
     
-
-    /**
-        var data = { lanes: this.lanes, items: [] };
-    
-        for (var i = 0; i < this.lanes.length; i++) {
-          data.items.push({
-            id: this.item,
-            lane: i,
-            start: this.date.add('days', 1).toString(),
-            end: this.date.add('days', 3).toString(),
-            class: 'past'
-          });
-    
-          this.date.add('days', 2);
-          this.item++;
-        }
-      **/
     return JSON.stringify(data);
 
   }
