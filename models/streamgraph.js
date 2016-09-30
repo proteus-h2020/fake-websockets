@@ -3,6 +3,7 @@ function streamgraphGenerator() {
     this.item = 0;
     this.countries = ['ES', 'UK', 'FR', 'AS', 'IT'];
 
+    this.date = moment(new Date(2015, 3, 3));
 
 
     this.next = () => {
@@ -15,13 +16,11 @@ function streamgraphGenerator() {
 
             data.push({
                 key: country,
-                x: dDate, 
+                x: dDate,
                 y: Math.random() * 50
             });
 
         }
-
-    console.log(data);
         return JSON.stringify(data);
 
     }
