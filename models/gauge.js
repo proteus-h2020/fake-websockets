@@ -4,7 +4,7 @@ function gaugeGenerator() {
     var data = [];
     for (var i = 0; i < 3; i++) {
       data.push({
-        x: parseInt(Math.random() * (100))
+        value: parseInt(Math.random() * (100))
       });
     }
     return JSON.stringify(data);

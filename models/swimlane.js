@@ -22,8 +22,8 @@ function swimlaneGenerator() {
       var lane = this.lanes[i];
       data.push({
         key: lane.label,
-        x: this.date.add('days', 1).format('YY/MM/DD').toString(),
-        y: this.date.add('days', 3).format('YY/MM/DD').toString()
+        start: this.date.add('days', 1).format('YY/MM/DD').toString(),
+        end: this.date.add('days', 3).format('YY/MM/DD').toString()
       })
     }
     
