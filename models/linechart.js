@@ -1,22 +1,21 @@
 function linechartGenerator() {
   this.x = 0;
 
+  function randomNull() {
+    return Math.random() <= 0.2;
+  }
+
   this.next = () => {
-    var series1 = [];
-    if (this.x > 1000000) {
-      this.x = 0;
-    }
-    /**
-    for (var i = 0; i < 3; i++) {
-      series1.push({
-        x: (++this.x),
-        y: parseInt(Math.random() * (100 - 20) + 20)
-      });
-    }
-    **/
-    //var data = [{ key: "series1", values: series1 }];
-    var key = (this.x % 2 == 0) ? 'serie1' : 'serie2';
-    var data = [{ key: key, x: (++this.x), y: parseInt(Math.random() * (100 - 20) + 20) }];
+
+    var x = (++this.x);
+
+    var data = [
+      { key: 'serie1', x: x, y: randomNull() ? 'NUL' : parseInt(Math.random() * (100 - 20) + 20) },
+      { key: 'serie2', x: x, y: parseInt(Math.random() * (100 - 20) + 20) },
+      { key: 'serie3', x: x, y: parseInt(Math.random() * (100 - 20) + 20) }
+    ];
+
+    console.log(data);
 
     return JSON.stringify(data);
   }
