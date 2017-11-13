@@ -14641,15 +14641,45 @@ let rain = [
   }
 ];
 
-let i = -1;;
+let i = -1;
+let flowMean = 0;
+let rainMean = 0;
 
 function rainGenerator() {
 
   this.next = () => {
+
+    if (Math.random() > 0.7) {
+      if (i == rain.length) { i = -1 };
+ 
+      let datum = rain[i];
+      let events = {};
+      flowMean = flowMean + (datum.flow - flowMean ) / (i + 1);
+      rainMean = rainMean + (datum.rain - rainMean ) / (i + 1);
+      events.time = datum.time;
+      events.flowError = 0.5; //Math.random() * (0.5 - 0.2) + 0.2;
+      events.rainError = 0.5; //Math.random() * (0.5 - 0.2) + 0.2;
+      events.flowMean = flowMean;
+      events.rainMean = rainMean;
+      
+      return JSON.stringify(events);
+    } else {
+      if (i == rain.length) { i = -1 };
+      i++;
+      let datum = rain[i];
+      return JSON.stringify(datum);
+    }
+
     if (i == rain.length) { i = -1 };
     i++;
     let datum = rain[i];
-    datum.flowError = Math.random() * (0.5 - 0.2) + 0.2;
+    flowMean = flowMean + (datum.flow - flowMean ) / (i + 1);
+    rainMean = rainMean + (datum.rain - rainMean ) / (i + 1);
+    // console.log(flowMean);
+    datum.flowError = 0.5; //Math.random() * (0.5 - 0.2) + 0.2;
+    datum.rainError = 0.5; //Math.random() * (0.5 - 0.2) + 0.2;
+    datum.flowMean = flowMean;
+    datum.rainMean = rainMean;
     return JSON.stringify(datum);
   }
 }
