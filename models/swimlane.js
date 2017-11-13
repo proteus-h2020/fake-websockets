@@ -16,15 +16,18 @@ function swimlaneGenerator() {
       this.item = 0;
       this.date = moment(new Date(2009, 9, 18, 0, 0, 0));
     }
-    var data = [];
+    // var data = [];
+    let data = null;
 
     for (var i = 0; i < this.lanes.length; i++) {
-      var lane = this.lanes[i];
-      data.push({
+      var lane = this.lanes[Math.floor(Math.random() * (2 - 0 + 1) + 0)];
+      // data.push(
+        data = {
         key: lane.label,
         start: this.date.add('days', 1).format('YY/MM/DD').toString(),
         end: this.date.add('days', 3).format('YY/MM/DD').toString()
-      })
+      }
+      // )
     }
     
     return JSON.stringify(data);

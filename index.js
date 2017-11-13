@@ -1,5 +1,5 @@
 var ws = require("nodejs-websocket");
-var TIME_INTERVAL = 2500;
+var TIME_INTERVAL = 100;
 var server = ws.createServer((conn) => {
   var path = conn.path;
   var generator = require('./models' + path);
@@ -22,5 +22,5 @@ var server = ws.createServer((conn) => {
       conn.sendText(data);
     }, time);
   }
-}).listen(3000);
+}).listen(process.env.PORT || 3000);
 
