@@ -14651,7 +14651,7 @@ function rainGenerator() {
 
     if (Math.random() > 0.7) {
       if (i == rain.length) { i = -1 };
- 
+
       let datum = rain[i];
       let events = {};
       flowMean = flowMean + (datum.flow - flowMean ) / (i + 1);
@@ -14661,12 +14661,14 @@ function rainGenerator() {
       events.rainError = 0.5; //Math.random() * (0.5 - 0.2) + 0.2;
       events.flowMean = flowMean;
       events.rainMean = rainMean;
-      
+
       return JSON.stringify(events);
     } else {
       if (i == rain.length) { i = -1 };
       i++;
       let datum = rain[i];
+      datum.flowError = Math.random() * (0.5 - 0.2) + 0.2;
+      datum.rainError = Math.random() * (0.5 - 0.2) + 0.2;
       return JSON.stringify(datum);
     }
 
